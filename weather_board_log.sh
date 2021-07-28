@@ -3,9 +3,9 @@
 
 logfile="/tmp/weather_board.log"
 weatherdevice="/dev/i2c-0"
-date
+date > $logfile
 if [ -e $weatherdevice ]; then
-  python3 ./weather_board_log.py $weatherdevice > $logfile
+  python3 ./weather_board_log.py $weatherdevice >> $logfile
 else
   echo "Device $weatherdevice could not be found."
 fi	
